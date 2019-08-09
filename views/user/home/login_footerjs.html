@@ -44,11 +44,11 @@
 
             },
             submitHandler: function (form) {
-                var url = '{{ urlfor "HomeController.DoLogin"}}'
+                var url = '{{ urlfor "user.HomeController.DoLogin"}}'
                 var data = $thisForm.serialize();
                 $.sdpost(url, data, function (re) {
                     if (re.code === 0) {                       
-                        window.location.href='{{ urlfor "HomeController.Index"}}'                                         
+                        window.location.href='{{ urlfor "user.HomeController.Index"}}'                                         
                     } else {
                         layer.alert(re.msg, { icon: 2, title: '失败' })
                     }
