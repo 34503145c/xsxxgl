@@ -151,8 +151,23 @@
         </header>
         <!-- Left side column. contains the logo and sidebar -->
         <aside class="main-sidebar">
-            <!--{{ template "shared/sidebar.html" }}-->
-        </aside>
+           <section class="sidebar">
+            <ul class="sidebar-menu tree" id="pageSidebar" data-widget="tree">
+              {{range .userMenu}}
+              <li class="treeview">  
+                <a href=""><i class="fa fa-circle-o"></i><span>{{.MenuName}}</span>   
+                 <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
+                </a>
+                <ul class="treeview-menu" style="display: block;">
+                 {{range .Children}}
+                  <li><a href="javascript:;"><i class="fa fa-circle-o"></i><span>{{.MenuName}}</span></a></li>     
+                  {{end}}
+                </ul>
+              </li>
+            {{end}}
+            </ul>
+          </section>
+      </aside>
 
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">

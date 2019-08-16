@@ -17,6 +17,7 @@ func (c *HomeController) Index() {
 	//判断是否登录
 	c.checkLogin()
 	c.Data["name"] = "beego.me"
+
 	c.setTpl()
 }
 func (c *HomeController) Page404() {

@@ -1,7 +1,7 @@
 package user
 
 import (
-	"fmt"
+	//	"fmt"
 	"strings"
 
 	"github.com/lhtzbj12/sdrms/enums"
@@ -45,6 +45,7 @@ func (c *BaseController) checkLogin() {
 		c.Redirect(urlstr+returnURL, 302)
 		c.StopRun()
 	}
+	c.Data["userMenu"] = GetuserMenu()
 }
 
 //从session里取用户信息
@@ -90,6 +91,7 @@ func (c *BaseController) setTpl(template ...string) {
 	}
 	c.Layout = layout
 	c.TplName = tplName
+
 }
 func (c *BaseController) jsonResult(code enums.JsonResultCode, msg string, obj interface{}) {
 	r := &common.JsonResult{code, msg, obj}
